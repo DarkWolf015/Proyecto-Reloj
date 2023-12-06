@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <h1>Reloj del Apocalipsis</h1>
+    <div id="reloj"></div>
+    
+    <script>
+        // funtion para obtener la hora actual en formato HH:mm
+        const horaActual = () => { 
+            var ahora = new Date();
+            var horas = ahora.getHours().toString().padStart(2, "0");
+            var mins  = ahora.getMinutes().toString().padStart(2, "0");
+            var seg   = ahora.getSeconds().toString().padStart(2, "0");
+            return horas + ":" + mins + ":" + seg;
+        }
+
+        //  FUNCION PARA ACTUALIZAR EL CONTENIDO DEL RELOJ
+        const actualizarHora = () => {
+            var reloj = document.getElementById("reloj");
+            reloj.textContent = horaActual();
+        }
+        // ACTUALIZAR EL RELOJ CADA SEGUNDO
+        setInterval(actualizarHora, 1000)
+
+        // INICIAR EL RELOJ AKL CARGAR LA PAGINA
+        actualizarHora();
+    </script>
+    <video  autoplay loop muted>
+    <source src="./img/istock-918695668_preview.mp4" tyoe ="video/mp4">
+
+    </video>
+</body>
+</html>
