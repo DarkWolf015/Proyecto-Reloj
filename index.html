@@ -15,9 +15,12 @@
         const horaActual = () => { 
             var ahora = new Date();
             var horas = ahora.getHours().toString().padStart(2, "0");
+            var PmAm = horas > 12 ? "PM" : "AM";
+            horas = horas % 12;
+            horas = horas ? horas : 12;
             var mins  = ahora.getMinutes().toString().padStart(2, "0");
             var seg   = ahora.getSeconds().toString().padStart(2, "0");
-            return horas + ":" + mins + ":" + seg;
+            return horas + ":" + mins + ":" + seg + " " + PmAm;
         }
 
         //  FUNCION PARA ACTUALIZAR EL CONTENIDO DEL RELOJ
